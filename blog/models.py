@@ -1,5 +1,5 @@
 from django.db import models
-
+import pandas as pd
 
 class Category(models.Model):
     name = models.CharField(
