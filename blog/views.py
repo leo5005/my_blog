@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from http.client import HTTPResponse
 
-# Create your views here.
+def frontpage(request):
+    return render(request, "blog/frontpage.html")
+
+
