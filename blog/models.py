@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
@@ -6,5 +7,6 @@ class Post(models.Model):
     intro = models.TextField()
     body = models.TextField()
     posted_date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(default=timezone.now)
     
     
