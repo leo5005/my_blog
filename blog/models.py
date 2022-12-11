@@ -25,15 +25,19 @@ class Category(models.Model):
     null = False,
     unique = True)
  
-def __str__(self):
-    return self.name
-
 class Tag(models.Model):
     name = models.CharField(
         max_length=255,
         blank=False,
         null=False,
         unique=True)
+    
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    email = models.EmailField()     
+    body = models.TextField()
+    posted_date = models.DateTimeField(auto_now_add=True)
         
     
     

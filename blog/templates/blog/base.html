@@ -1,16 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+        <link rel="stylesheet" href='{% static "blog.css" %}'>
     </head>
     <body>
+      <div class="navbar">
       <nav class="navbar is-danger">
+        <a>ホーム</a>
+        <a>パスワードを変更</a>
+        <a>ログアウト</a>
         <div class="navbar-brand">
             <a href="/" class="navbar-item">
                <strong>レオのブログ</strong>
             </a>
-        </div>
+        </div>      
+      </div>
       </nav>
     
       <section class = "section">

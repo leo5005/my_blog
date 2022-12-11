@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", frontpage),
-    path("<slug:slug>/", post_detail, name="post_detail"),
+    path("<slug:slug>/", post_detail, name="post_detail")
     
     ]
 
