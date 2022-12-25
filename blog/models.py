@@ -2,10 +2,11 @@ from django.db import models
 from django.utils import timezone
 
 class Post(models.Model):
-    title = models.CharField(
-    max_length=255,
+    title = models.CharField("タイトル", max_length=255,
     blank=True,
     null=False)
+    
+    content = models.Textfield("本文")
     
     slug = models.SlugField()
     intro = models.TextField()
