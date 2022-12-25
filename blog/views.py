@@ -2,6 +2,10 @@ from django.shortcuts import render,redirect
 from http.client import HTTPResponse
 from .models import Post
 from blog.forms import CommentForm
+from .forms import PostForm
+from django.views.generic import View
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 def frontpage(request):
     posts = Post.objects.all()
@@ -24,4 +28,12 @@ def post_detail(request, slug):
         
     
     return render(request,"blog/post_detail.html",{"post": post,"form":form})
+
+class CreatePostView(View):
+    def get(self,request,*args,**kwargs):
+        form = PostForm(request.POST or None)
+        return render(request, "blog/post_form.html",{
+            "form" : form
+        })
+        
 
