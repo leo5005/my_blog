@@ -3,8 +3,10 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scate=1.0">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
-        <link rel="stylesheet" href='{% static "main.css" %}'>
+        <link rel="stylesheet" href='{% static "css/main.css" %}'>
+        <title>djangoでブログ</title>
     </head>
     <body>
       <nav class="navbar is-danger">
@@ -12,6 +14,26 @@
             <a href="/" class="navbar-item">
                <strong>レオのブログ</strong>
             </a>
+            <ul class = "navbar-nav ml-auto">
+            <li class = "nav-item">
+              <a class = "nav-link" href = "/">ホーム</a>
+            </li>
+            {% if user.is_authenticated %}
+                <li class = "nav-item">
+                    <a class = "nav-link" href = "">投稿</a>
+                </li>
+                <li class = "nav-item">
+                  <a class = "nav-link" href = "logout.html">ログアウト</a>
+                </li>
+            {% else %}
+                 <li class = "nav-item">
+                     <a class = "nav-link" href = "">サインアップ</a>
+                 </li>
+                 <li class = "nav-item">
+                     <a class = "nav-link" href = "">ログイン</a>
+                 </li>
+            {% endif %}
+            </ul>
         </div>      
       </nav>
     
